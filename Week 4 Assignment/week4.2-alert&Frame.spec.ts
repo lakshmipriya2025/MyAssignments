@@ -3,8 +3,8 @@ import {test,expect} from '@playwright/test'
 test ("testFrame",async({page})=>{
 await page.goto("https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm")
 
-page.on('dialog',alerttype=>{                                  //Listener for dialogs 
-const type = alerttype.type()                                  //Get the type of dialog (alert / confirm / prompt)
+page.on('dialog',alerttype=>{                                   //Listener for dialogs 
+const type = alerttype.type()                                   //Get the type of dialog (alert / confirm / prompt)
 console.log("The type of the alert is " + type)
 const message = alerttype.message()                            //Get the message text
 console.log("Message is " + message)
@@ -18,6 +18,7 @@ const message = frame.locator('#demo')                           //Locate with i
 await expect(message).toHaveText("You pressed OK!");              //Assert that the text changes correctly after accepting the confirm
 
 })
+
 
 
 
